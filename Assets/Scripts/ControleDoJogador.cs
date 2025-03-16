@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControleDoJogador : MonoBehaviour
 {
+    public Rigidbody2D oRigibody2D; //Armazena o corpo fsico do Jogador
     
     public float velocidadeDoJogador; //Armazena a velocidade de movimento do jogador como um valor flutuante.
 
@@ -31,7 +32,9 @@ public class ControleDoJogador : MonoBehaviour
         // Variaveis tipo Vector 3 armazenam Posições X, Y, Z
         // Transform.up serve para acessar o eixo que vai para cima que visão do personagem é para esquerda e direita
         Vector3 movimentoHorizontal = transform.up * comandosDoJogador.x;
-         // Transform.up serve para acessar o eixo que vai para direito que visão do personagem é para cima e para Baixo
+        // Transform.up serve para acessar o eixo que vai para direito que visão do personagem é para cima e para Baixo
         Vector3 movimentoVertical = transform.right * comandosDoJogador.y;
+        //Aplica velocidade ao corpo do Player
+        oRigibody2D.velocity = (movimentoHorizontal + movimentoVertical) * velocidadeDoJogador;
     }
 }
