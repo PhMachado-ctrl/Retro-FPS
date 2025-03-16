@@ -19,11 +19,11 @@ public class ControleDoJogador : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        MovimentarJogador();
     }
 
     //Metodo de Movimento do jogador
-    private void MovimentacaoDoJogador()
+    private void MovimentarJogador()
     {
         //Adiciona na variavel controle Valor na Horizontal(eixo X teclas A e D) e valor na vertical(eixo Y teclas W e S) 
         //Input.GetAxis: Valor de entrada quando preciona um botão
