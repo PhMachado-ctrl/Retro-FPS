@@ -1,0 +1,39 @@
+[Ll]ibrary/
+Library/
+Temp/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+ExportedObj/
+.DS_Store
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.ide
+*.suo
+*.ntvs*
+*.njsproj
+*.sln.docstates
+.vscode/
+
+# Unity Package Manager
+Packages/manifest.json
+Packages/packages-lock.json
+
+# Rider
+.idea/
+
+# VS Code local history
+.history/
