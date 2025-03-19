@@ -5,6 +5,8 @@ using UnityEngine;
 public class AtaqueDoJogador : MonoBehaviour
 {
     public Camera cameradoJogo; //Armazena o objeto da Camera
+    public int maxMunicao; //Maximo de munição que pode carregar.
+    public int AtualMunicao; //Quantidade atual de munição.
 
     // Start is called before the first frame update
     void Start()
@@ -18,27 +20,34 @@ public class AtaqueDoJogador : MonoBehaviour
     void Update()
     {
         Atirar();
-        
     }
 
     private void Atirar()
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            //Cria um raio no meio da tela.
-            Ray raio = cameradoJogo.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-            RaycastHit localDeAcerto; 
-
-            //Se a parte fisica acerta algo.
-            // out coloca o valor de raio em local de acerto
-            if(Physics.Raycast(raio, out localDeAcerto))
+            if(AtualMunicao > 0)
             {
-                Debug.Log("Você está olhando: " + localDeAcerto.transform.name);
+                //Cria um raio no meio da tela.
+                Ray raio = cameradoJogo.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+                RaycastHit localDeAcerto; 
+
+                //Se a parte fisica acerta algo.
+                // out coloca o valor de raio em local de acerto
+                if(Physics.Raycast(raio, out localDeAcerto))
+                {
+                    Debug.Log("Você está olhando: " + localDeAcerto.transform.name);
+                }
+                else
+                {
+                    Debug.Log("Você está olhando nada.");
+                }
             }
             else
             {
-                Debug.Log("Você está olhando nada.");
+                Debug.Log("Sem Munição");
             }
+            AtualMunicao--;
         }
     }
 }
