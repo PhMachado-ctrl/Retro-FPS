@@ -49,6 +49,6 @@ public class ControleDoJogador : MonoBehaviour
         movimentoDoMouse = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y") * sensibilidadeDoMouse);
         //Rodação do transform do jogador
         // Quaternion usa 4 eixos X Y Z W e o Euler converte em 3 eixos
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z - movimentoDoMouse.x);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z  - movimentoDoMouse.x);
     }
 }
