@@ -9,6 +9,8 @@ public class AtaqueDoJogador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked; //Deixa mouse travado dentro da tla do jogo.
+        Cursor.visible = false; //Cursor invisivel.
         
     }
 
@@ -35,7 +37,7 @@ public class AtaqueDoJogador : MonoBehaviour
             }
             else
             {
-                Debug.Log("Você está lhando nada.");
+                Debug.Log("Você está olhando nada.");
             }
         }
     }
