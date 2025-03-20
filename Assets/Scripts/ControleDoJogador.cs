@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControleDoJogador : MonoBehaviour
 {
-    public static ControleDoJogador instance; //Cria uma jariavel unica, onde armazena o proprio jogador
+    public static ControleDoJogador instance; //Cria uma jariavel unica, onde armazena o proprio jogador, quando a variavel é unica não pode ser criada outra igual.
     public Rigidbody2D oRigibody2D; //Armazena o corpo fsico do Jogador
     
     public float velocidadeDoJogador; //Armazena a velocidade de movimento do jogador como um valor flutuante.
