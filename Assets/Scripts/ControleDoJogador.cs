@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControleDoJogador : MonoBehaviour
 {
+    public static ControleDoJogador instance; //Cria uma jariavel unica, onde armazena o proprio jogador
     public Rigidbody2D oRigibody2D; //Armazena o corpo fsico do Jogador
     
     public float velocidadeDoJogador; //Armazena a velocidade de movimento do jogador como um valor flutuante.
@@ -13,6 +14,12 @@ public class ControleDoJogador : MonoBehaviour
     private Vector2 comandosDoJogador; //Armazena o valor X e Y
 
     private Vector2 movimentoDoMouse; //Armazena os valores de posição do Mouse
+        
+    //Inicia antes do Start
+    void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
