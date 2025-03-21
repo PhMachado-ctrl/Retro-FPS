@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AtaqueDoJogador : MonoBehaviour
 {
+    public GameObject EfeitoDeImpacto; //Armazena o pre fab do game object
     public Camera cameradoJogo; //Armazena o objeto da Camera
     public int maxMunicao; //Maximo de munição que pode carregar.
     public int AtualMunicao; //Quantidade atual de munição.
@@ -36,6 +37,7 @@ public class AtaqueDoJogador : MonoBehaviour
                 // out coloca o valor de raio em local de acerto
                 if(Physics.Raycast(raio, out localDeAcerto))
                 {
+                    Instantiate(EfeitoDeImpacto, localDeAcerto.point, localDeAcerto.transform.rotation);
                     Debug.Log("Você está olhando: " + localDeAcerto.transform.name);
                 }
                 else
