@@ -8,6 +8,7 @@ public class DestruirComOTempo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Destrui o proprio objeto que estiver com o codigo depois de X tempo
         Destroy(this.gameObject, tempoDeVida);
     }
 
