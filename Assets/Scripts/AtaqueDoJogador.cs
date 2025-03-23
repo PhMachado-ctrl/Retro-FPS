@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AtaqueDoJogador : MonoBehaviour
 {
+    public Text TextoDeMunicao;
     public Animator animatorDaArma;
     public GameObject efeitoDeImpacto; //Armazena o pre fab do game object
     public Camera cameradoJogo; //Armazena o objeto da Camera
@@ -15,6 +17,7 @@ public class AtaqueDoJogador : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked; //Deixa mouse travado dentro da tla do jogo.
         Cursor.visible = false; //Cursor invisivel.
+        TextoDeMunicao.text = "MUNIÇÃO\n" + AtualMunicao;
         
     }
 
@@ -52,6 +55,7 @@ public class AtaqueDoJogador : MonoBehaviour
                 Debug.Log("Sem Munição");
             }
             AtualMunicao--;
+            TextoDeMunicao.text = "MUNIÇÃO\n" + AtualMunicao;
             animatorDaArma.SetTrigger("Arma Atirando");
         }
     }
