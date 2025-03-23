@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControleDoJogador : MonoBehaviour
 {
+    public Animator animatorPainelArma;
     public static ControleDoJogador instance; //Cria uma jariavel unica, onde armazena o proprio jogador, quando a variavel é unica não pode ser criada outra igual.
     public Rigidbody2D oRigibody2D; //Armazena o corpo fsico do Jogador
     
@@ -48,6 +49,15 @@ public class ControleDoJogador : MonoBehaviour
         Vector3 movimentoVertical = transform.right * comandosDoJogador.y;
         //Aplica velocidade ao corpo do Player, soma a posição x e y vezes a velocidade
         oRigibody2D.velocity = (movimentoHorizontal + movimentoVertical) * velocidadeDoJogador;
+
+        if (oRigibody2D.velocity.magnitude == 0)
+        {
+            animatorPainelArma.Play("Animação Parado");
+        }
+        else
+        {
+            animatorPainelArma.Play("Animação Andando");
+        }
     }
 
     private void GirarJogador()

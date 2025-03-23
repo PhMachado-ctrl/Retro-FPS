@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 265356704}
   - component: {fileID: 265356706}
   - component: {fileID: 265356705}
+  - component: {fileID: 265356707}
   m_Layer: 5
   m_Name: PainelDaArma
   m_TagString: Untagged
@@ -198,6 +199,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265356703}
   m_CullTransparentMesh: 1
+--- !u!95 &265356707
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265356703}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5ccbd174bb84e9849a2435be8f8ee6c7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 925863fa52dad22419ff0a890e34d893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatorPainelArma: {fileID: 265356707}
   oRigibody2D: {fileID: 1804820903}
   velocidadeDoJogador: 5
   sensibilidadeDoMouse: 100
@@ -872,6 +895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a53fb7e75b1b024fbff5aafcf5bbbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TextoDeMunicao: {fileID: 1629958602}
   animatorDaArma: {fileID: 2044526336}
   efeitoDeImpacto: {fileID: 9058770668199508239, guid: cd0e71f5b078e874b91c6b22a97e4c3b, type: 3}
   cameradoJogo: {fileID: 519420031}
