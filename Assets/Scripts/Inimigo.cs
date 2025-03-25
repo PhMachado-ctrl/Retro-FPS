@@ -8,23 +8,29 @@ public class Inimigo : MonoBehaviour
     public Transform[] pontosParaCaminhar;
     public int pontoAtual;
 
-    private bool inimigoEstaVivo;
-    private bool inimigoPodeAndar;
+    public bool inimigoEstaVivo;
+    public bool inimigoPodeAndar;
+    public float tempoEntrePontos;
+    public float tempoAtual;
 
     // Start is called before the first frame update
     void Start()
     {
+        inimigoEstaVivo = true;
+        inimigoPodeAndar = true;
         
+        //inimigo começa o ponto 0
+        transform.position = pontosParaCaminhar[0].position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        MovimentarDoInimigo();
     }
 
     //Movimentação do Inimigo
-    private void MovimentoDoInimigo()
+    private void MovimentarDoInimigo()
     {
         if(inimigoEstaVivo)
         {
@@ -36,14 +42,27 @@ public class Inimigo : MonoBehaviour
                 //Identifica se o inimigo chegou no ponto
                 if (transform.position.y == pontosParaCaminhar[pontoAtual].position.y)
                 {
-                    pontoAtual++;
+                    EsperarAntesDeCaminhar();
                 }
                 //.lenght verifica se chegou no ponto maximo
                 if(pontoAtual == pontosParaCaminhar.Length)
                 {
-                    pontoAtual = 0;
+                    pontoAtual = 0; //Faz o inimigo voltar para o primeiro ponto
                 }
             }
+        }
+    }
+
+    private void EsperarAntesDeCaminhar()
+    {
+        inimigoPodeAndar = false;
+        tempoAtual -= Time.deltaTime; //Diminui em 1 o tempo atual a cada um segundo
+
+        if (tempoAtual <= 0)
+        {
+            inimigoPodeAndar = true;
+            pontoAtual++;
+            tempoAtual = tempoEntrePontos;
         }
     }
 }

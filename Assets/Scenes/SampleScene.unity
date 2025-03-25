@@ -1302,6 +1302,7 @@ GameObject:
   - component: {fileID: 2038352165}
   - component: {fileID: 2038352168}
   - component: {fileID: 2038352167}
+  - component: {fileID: 2038352169}
   m_Layer: 0
   m_Name: 'Inimigo '
   m_TagString: Untagged
@@ -1424,6 +1425,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cb8977c196c60a479009eebce78cf17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2038352169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038352164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f013e515057ee8b42bd945e8067fff86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidadeInimigo: 3
+  pontosParaCaminhar:
+  - {fileID: 916346797}
+  - {fileID: 319545396}
+  - {fileID: 2059309051}
+  pontoAtual: 0
+  inimigoEstaVivo: 0
+  inimigoPodeAndar: 0
 --- !u!1 &2044526332
 GameObject:
   m_ObjectHideFlags: 0
