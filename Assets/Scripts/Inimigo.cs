@@ -38,6 +38,11 @@ public class Inimigo : MonoBehaviour
                 {
                     pontoAtual++;
                 }
+                //.lenght verifica se chegou no ponto maximo
+                if(pontoAtual == pontosParaCaminhar.Length)
+                {
+                    pontoAtual = 0;
+                }
             }
         }
     }
