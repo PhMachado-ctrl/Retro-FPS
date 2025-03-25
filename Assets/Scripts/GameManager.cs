@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    public bool JogadorEstaVivo; //Sertificar se jogador está vivo
     // Start is called before the first frame update
     void Start()
     {
