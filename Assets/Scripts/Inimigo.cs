@@ -55,7 +55,7 @@ public class Inimigo : MonoBehaviour
 
     private void EsperarAntesDeCaminhar()
     {
-        inimigoPodeAndar = false;
+        //inimigoPodeAndar = false;
         tempoAtual -= Time.deltaTime; //Diminui em 1 o tempo atual a cada um segundo
 
         if (tempoAtual <= 0)
