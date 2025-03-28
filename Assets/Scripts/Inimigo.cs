@@ -12,6 +12,10 @@ public class Inimigo : MonoBehaviour
     public bool inimigoPodeAndar;
     public float tempoEntrePontos;
     public float tempoAtual;
+    public GameObject projetilInimigo;
+    public float distanciaParaDisparo;
+    public float tempoEntreDisparos;
+    public bool inimigoAtirou;
 
     // Start is called before the first frame update
     void Start()
@@ -65,4 +69,23 @@ public class Inimigo : MonoBehaviour
             tempoAtual = tempoEntrePontos;
         }
     }
+
+    private void VerificarDistanciaParaAtaque()
+    {
+        if(Vector3.Distance(transform.position, ControleDoJogador.instance.transform.position) < distanciaParaDisparo)
+        {
+            AtacarJogador();
+        }
+    }
+
+    private void AtacarJogador()
+    {
+        if (inimigoAtirou = false)
+        {
+            inimigoPodeAndar = false;
+            Instantiate()
+        }
+
+    }
+
 }
