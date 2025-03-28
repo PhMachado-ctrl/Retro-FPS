@@ -13,6 +13,7 @@ public class Inimigo : MonoBehaviour
     public float tempoEntrePontos;
     public float tempoAtual;
     public GameObject projetilInimigo;
+    public Transform localDoDisparo;
     public float distanciaParaDisparo;
     public float tempoEntreDisparos;
     public bool inimigoAtirou;
@@ -22,6 +23,7 @@ public class Inimigo : MonoBehaviour
     {
         inimigoEstaVivo = true;
         inimigoPodeAndar = true;
+        inimigoAtirou = false;
         
         //inimigo começa o ponto 0
         transform.position = pontosParaCaminhar[0].position;
@@ -31,6 +33,7 @@ public class Inimigo : MonoBehaviour
     void Update()
     {
         MovimentarDoInimigo();
+        VerificarDistanciaParaAtaque();
     }
 
     //Movimentação do Inimigo
@@ -76,16 +79,27 @@ public class Inimigo : MonoBehaviour
         {
             AtacarJogador();
         }
+        else
+        {
+            inimigoPodeAndar = true;
+        }
     }
 
     private void AtacarJogador()
     {
-        if (inimigoAtirou = false)
+        if (inimigoAtirou == false)
         {
             inimigoPodeAndar = false;
-            Instantiate()
+            Instantiate(projetilInimigo, localDoDisparo.transform.position, localDoDisparo.transform.rotation);
+            inimigoAtirou = true;
+            Invoke(nameof(ResetarAtaque), tempoEntreDisparos);
         }
 
+    }
+
+    private void ResetarAtaque()
+    {
+        inimigoAtirou = false;
     }
 
 }
