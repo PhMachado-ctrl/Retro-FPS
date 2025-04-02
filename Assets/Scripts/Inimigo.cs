@@ -5,8 +5,11 @@ using UnityEngine;
 public class Inimigo : MonoBehaviour
 {
     public float velocidadeInimigo;
-    public Transform[] pontosParaCaminhar;
-    public int pontoAtual;
+    public Transform[] pontosParaCaminhar; //caminhos no mapa que inimigo vai andar
+    public int pontoAtual; //lugar onde o inimigo está
+
+    public int vidaMaxima;
+    public int vidaAtual; 
 
     public bool inimigoEstaVivo;
     public bool inimigoPodeAndar;
@@ -21,6 +24,8 @@ public class Inimigo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        vidaAtual = vidaMaxima;
+
         inimigoEstaVivo = true;
         inimigoPodeAndar = true;
         inimigoAtirou = false;
@@ -100,6 +105,20 @@ public class Inimigo : MonoBehaviour
     private void ResetarAtaque()
     {
         inimigoAtirou = false;
+    }
+
+    public void MachucouInimigo(int danoRecebido)
+    {
+        if(vidaAtual <= 0)
+        {
+            inimigoDerrotado();
+        }
+        vidaAtual -= vidaMaxima;
+    }
+
+    private void inimigoDerrotado()
+    {
+        Destroy(this.gameObject);
     }
 
 }

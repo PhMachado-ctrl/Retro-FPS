@@ -489,7 +489,7 @@ Transform:
   m_GameObject: {fileID: 849828339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -641,7 +641,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1316582162}
   m_Layer: 0
-  m_Name: PontodeTiro
+  m_Name: Ponto de Tiro
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -953,7 +953,7 @@ Transform:
   m_GameObject: {fileID: 1804820901}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.08, y: -1.96, z: 0}
+  m_LocalPosition: {x: -8.89, y: -1.96, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1402,7 +1402,7 @@ Transform:
   m_GameObject: {fileID: 2038352164}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.25, y: -0.17, z: -0.5}
+  m_LocalPosition: {x: 4.12, y: 2.94, z: -0.5}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1479,6 +1479,11 @@ MonoBehaviour:
   inimigoPodeAndar: 0
   tempoEntrePontos: 3
   tempoAtual: 3
+  projetilInimigo: {fileID: 3342201249770251077, guid: 3037f30ada09ff344bc21318c9877cd5, type: 3}
+  localDoDisparo: {fileID: 1316582162}
+  distanciaParaDisparo: 5
+  tempoEntreDisparos: 1
+  inimigoAtirou: 0
 --- !u!1 &2044526332
 GameObject:
   m_ObjectHideFlags: 0
