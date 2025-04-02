@@ -10,14 +10,16 @@ public class AtaqueDoJogador : MonoBehaviour
     public GameObject efeitoDeImpacto; //Armazena o pre fab do game object
     public Camera cameradoJogo; //Armazena o objeto da Camera
     public int maxMunicao; //Maximo de munição que pode carregar.
-    public int AtualMunicao; //Quantidade atual de munição.
+    public int atualMunicao; //Quantidade atual de munição.
+
+    public int danoCausado;
 
     // Start is called before the first frame update
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; //Deixa mouse travado dentro da tla do jogo.
         Cursor.visible = false; //Cursor invisivel.
-        TextoDeMunicao.text = "MUNIÇÃO\n" + AtualMunicao;
+        TextoDeMunicao.text = "MUNIÇÃO\n" + atualMunicao;
         
     }
 
@@ -31,7 +33,7 @@ public class AtaqueDoJogador : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            if(AtualMunicao > 0)
+            if(atualMunicao > 0)
             {
                 //Cria um raio no meio da tela.
                 Ray raio = cameradoJogo.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
@@ -44,6 +46,12 @@ public class AtaqueDoJogador : MonoBehaviour
                     //Instancia o efeito Impacto na localzação que o racast acertou
                     Instantiate(efeitoDeImpacto, localDeAcerto.point, localDeAcerto.transform.rotation);
                     Debug.Log("Você está olhando: " + localDeAcerto.transform.name);
+
+                    if(localDeAcerto.transform.gameObject.CompareTag("Inimigo"))
+                    {
+                        localDeAcerto.transform.gameObject.GetComponent<Inimigo>().MachucouInimigo(danoCausado);
+                    }
+
                 }
                 else
                 {
@@ -54,8 +62,8 @@ public class AtaqueDoJogador : MonoBehaviour
             {
                 Debug.Log("Sem Munição");
             }
-            AtualMunicao--;
-            TextoDeMunicao.text = "MUNIÇÃO\n" + AtualMunicao;
+            atualMunicao--;
+            TextoDeMunicao.text = "MUNIÇÃO\n" + atualMunicao;
             animatorDaArma.SetTrigger("Arma Atirando");
         }
     }

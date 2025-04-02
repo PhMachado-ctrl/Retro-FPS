@@ -993,7 +993,8 @@ MonoBehaviour:
   efeitoDeImpacto: {fileID: 9058770668199508239, guid: cd0e71f5b078e874b91c6b22a97e4c3b, type: 3}
   cameradoJogo: {fileID: 519420031}
   maxMunicao: 30
-  AtualMunicao: 10
+  atualMunicao: 0
+  danoCausado: 0
 --- !u!1 &1874454623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1475,6 +1476,8 @@ MonoBehaviour:
   - {fileID: 319545396}
   - {fileID: 2059309051}
   pontoAtual: 0
+  vidaMaxima: 10
+  vidaAtual: 0
   inimigoEstaVivo: 0
   inimigoPodeAndar: 0
   tempoEntrePontos: 3

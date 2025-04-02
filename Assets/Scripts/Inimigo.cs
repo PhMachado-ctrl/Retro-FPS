@@ -107,15 +107,20 @@ public class Inimigo : MonoBehaviour
         inimigoAtirou = false;
     }
 
+    //Quando o jogar atirar no inimigo chamará está função
     public void MachucouInimigo(int danoRecebido)
     {
         if(vidaAtual <= 0)
         {
+            inimigoEstaVivo = false;
+            inimigoPodeAndar = false;
+            
             inimigoDerrotado();
         }
-        vidaAtual -= vidaMaxima;
+        vidaAtual -= danoRecebido;
     }
 
+    //morte do inimigo
     private void inimigoDerrotado()
     {
         Destroy(this.gameObject);
