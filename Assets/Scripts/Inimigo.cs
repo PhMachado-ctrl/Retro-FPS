@@ -110,6 +110,7 @@ public class Inimigo : MonoBehaviour
     //Quando o jogar atirar no inimigo chamará está função
     public void MachucouInimigo(int danoRecebido)
     {
+        vidaAtual -= danoRecebido;
         if(vidaAtual <= 0)
         {
             inimigoEstaVivo = false;
@@ -117,7 +118,6 @@ public class Inimigo : MonoBehaviour
             
             inimigoDerrotado();
         }
-        vidaAtual -= danoRecebido;
     }
 
     //morte do inimigo

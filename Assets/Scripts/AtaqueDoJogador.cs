@@ -49,7 +49,7 @@ public class AtaqueDoJogador : MonoBehaviour
 
                     if(localDeAcerto.transform.gameObject.CompareTag("Inimigo"))
                     {
-                        localDeAcerto.transform.gameObject.GetComponent<Inimigo>().MachucouInimigo(danoCausado);
+                        localDeAcerto.transform.gameObject.GetComponentInParent<Inimigo>().MachucouInimigo(danoCausado);
                     }
 
                 }
@@ -57,14 +57,15 @@ public class AtaqueDoJogador : MonoBehaviour
                 {
                     Debug.Log("Você está olhando nada.");
                 }
+                atualMunicao--;
+                TextoDeMunicao.text = "MUNIÇÃO\n" + atualMunicao;
+                animatorDaArma.SetTrigger("Arma Atirando");
             }
             else
             {
                 Debug.Log("Sem Munição");
             }
-            atualMunicao--;
-            TextoDeMunicao.text = "MUNIÇÃO\n" + atualMunicao;
-            animatorDaArma.SetTrigger("Arma Atirando");
+           
         }
     }
 }
