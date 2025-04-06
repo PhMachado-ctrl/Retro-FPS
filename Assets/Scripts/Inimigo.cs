@@ -7,6 +7,7 @@ public class Inimigo : MonoBehaviour
     public float velocidadeInimigo;
     public Transform[] pontosParaCaminhar; //caminhos no mapa que inimigo vai andar
     public int pontoAtual; //lugar onde o inimigo está
+    public Animator oAnimator; //Animações do inimigo
 
     public int vidaMaxima;
     public int vidaAtual; 
@@ -50,10 +51,11 @@ public class Inimigo : MonoBehaviour
             {
                 //Vector2.MoveTowards move de um ponto ao outro
                 transform.position = Vector2.MoveTowards(transform.position, pontosParaCaminhar[pontoAtual].transform.position, velocidadeInimigo * Time.deltaTime);
-
+                oAnimator.setTrigger("Andando");
                 //Identifica se o inimigo chegou no ponto
                 if (transform.position.y == pontosParaCaminhar[pontoAtual].position.y)
-                {
+                {                   
+                    oAnimator.setTrigger("Parar");
                     EsperarAntesDeCaminhar();
                 }
                 //.lenght verifica se chegou no ponto maximo
@@ -95,6 +97,7 @@ public class Inimigo : MonoBehaviour
         if (inimigoAtirou == false)
         {
             inimigoPodeAndar = false;
+            oAnimator.setTrigger("Atacando");
             Instantiate(projetilInimigo, localDoDisparo.transform.position, localDoDisparo.transform.rotation);
             inimigoAtirou = true;
             Invoke(nameof(ResetarAtaque), tempoEntreDisparos);
@@ -111,12 +114,13 @@ public class Inimigo : MonoBehaviour
     public void MachucouInimigo(int danoRecebido)
     {
         vidaAtual -= danoRecebido;
+        oAnimator.setTrigger("Dano");
         if(vidaAtual <= 0)
         {
             inimigoEstaVivo = false;
             inimigoPodeAndar = false;
             
-            inimigoDerrotado();
+            oAnimator.setTrigger("Derrotado");
         }
     }
 
