@@ -20,13 +20,13 @@ public class VidaDoJogador : MonoBehaviour
 
     public void MachucouJogador(int danoRecebido)
     {
-        if (GameManager.instance.JogadorEstaVivo)
+        if (GameManager.instance.JogadorEstaVivo == true)
         {
             vidaAtual -= danoRecebido;
 
             if (vidaAtual <= 0)
             {
-                GameManager.instance.gameObject.GetComponent<GameManager>().GameOver();
+                GameManager.instance.GameOver();
             }
         }
     }
