@@ -39,8 +39,12 @@ public class Inimigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovimentarDoInimigo();
-        VerificarDistanciaParaAtaque();
+        if (GameManager.instance.JogadorEstaVivo)
+        {
+            MovimentarDoInimigo();
+            VerificarDistanciaParaAtaque();
+        }
+       
     }
 
     //Movimentação do Inimigo
