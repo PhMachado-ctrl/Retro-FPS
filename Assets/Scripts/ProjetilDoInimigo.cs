@@ -21,11 +21,14 @@ public class ProjetilDoInimigo : MonoBehaviour
         transform.Translate(Vector3.forward * velocidadeDoProjetil * Time.deltaTime);
     } 
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
+    //Verifica através da other é o jogador
+   void OnTriggerEnter2D(Collider2D other)
+   {
+    // Verifica se tem other tem a Tag Player
+       if (other.gameObject.CompareTag("Player"))
+       {
             other.gameObject.GetComponent<VidaDoJogador>().MachucouJogador(danoParaCausar);
-        }
-    }
+       }
+       Destroy(this.gameObject);
+   }
 }
