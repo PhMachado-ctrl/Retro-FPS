@@ -22,11 +22,11 @@ public class VidaDoJogador : MonoBehaviour
     {
         if (GameManager.instance.JogadorEstaVivo)
         {
-            vidaAtual -= danoRecebido
+            vidaAtual -= danoRecebido;
 
             if (vidaAtual <= 0)
             {
-                GameManager.transform.gameObject.GetComponent<GameManager>().GameOver();
+                GameManager.instance.gameObject.GetComponent<GameManager>().GameOver();
             }
         }
     }

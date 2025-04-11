@@ -24,5 +24,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         JogadorEstaVivo = false;
+        Debug.Log("GAME OVER");
     }
 }
