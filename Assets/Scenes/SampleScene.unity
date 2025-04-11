@@ -1485,6 +1485,7 @@ MonoBehaviour:
   tempoAtual: 3
   projetilInimigo: {fileID: 3342201249770251077, guid: 3037f30ada09ff344bc21318c9877cd5, type: 3}
   localDoDisparo: {fileID: 1316582162}
+  oAnimator: {fileID: 2038352170}
   distanciaParaDisparo: 5
   tempoEntreDisparos: 1
   inimigoAtirou: 0

@@ -6,10 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public bool JogadorEstaVivo; //Sertificar se jogador está vivo
+    public bool JogadorEstaVivo; //VErifica se jogador está vivo
+
     // Start is called before the first frame update
     void Start()
     {
+        JogadorEstaVivo = true;
         instance = this;
     }
 
@@ -17,5 +19,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GameOver()
+    {
+        JogadorEstaVivo = false;
     }
 }
