@@ -28,13 +28,16 @@ public class ItemColetavel : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
+            //SE FOR KITMEDICO FAÇA.
             if(kitMedico = true)
             {
-
+                other.gameObject.GetComponent<VidaDoJogador>().GanharVida(vidaParaDar);
             }
-
+            
+            //SE FOR MUNIÇÃO FAÇA.
             if(municao == true)
             {
+                //PEGA O COMPONENTE DE QUE COLIDIU E CHAMA O MÉTODO
                 other.gameObject.GetComponent<AtaqueDoJogador>().GanharMunicao(municaoParaDar);
             }
 

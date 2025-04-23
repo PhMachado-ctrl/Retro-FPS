@@ -34,4 +34,21 @@ public class VidaDoJogador : MonoBehaviour
             }
         }
     }
+
+    //METODO PUBLICO PARA GANHAR VIDA.
+    public void GanharVida(vidaRecebida)
+    {
+        //SE A SOMA DA VIDAATIAL EA VIDARECEVIDA FOR ENOR QUE O MAXIMO FAÇA.
+        if(vidaAtual + vidaRecebida < vidaMaxima)
+        {
+            //ADCIONA A VIDA RECEBIDA NA VIDA ATUAL.
+            vidaAtual += vidaRecebida;
+        }
+        else
+        {
+            //SE NÃO VIDA ATUAL VAI SER IGUAL A VIDA MAXIMA
+            vidaAtual = vidaMaxima;
+        }
+        textoVidaJogador.text = "VIDA\n" + vidaAtual;
+    }
 }
