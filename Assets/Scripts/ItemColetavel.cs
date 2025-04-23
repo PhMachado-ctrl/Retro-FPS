@@ -42,9 +42,10 @@ public class ItemColetavel : MonoBehaviour
 
             if(chavePrata == true)
             {
-                
+
             }
 
+            Destroy(this.gameObject);
         }
     }
 }
