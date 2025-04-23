@@ -68,4 +68,22 @@ public class AtaqueDoJogador : MonoBehaviour
            
         }
     }
+
+    public void GanharMunicao(int municaoParaReceber)
+    {
+        //SE A SOMA DA MUNICAO FOR MENOR QUE A MAXIMA FAÇA
+        if (atualMunicao + municaoParaReceber < maxMunicao)
+        {
+           //SOME A QUANTIDADE DE MUNICAO ATUAL COM A QUE ESTÁ RECEBENDO.
+           atualMunicao += municaoParaReceber; 
+        }
+        else
+        {
+            //SE A MUNICAO QUE VAI RECEBER FOR MAIOR QUE A MAXIMA A MUNICAO ATUAL SERA IGUAL A MAXIMA 
+            atualMunicao = maxMunicao;
+        }
+
+        //TEXTO DE MUNICAO SERA ATUALIZADO NA TELA
+        TextoDeMunicao.text = "MUNIÇÃO\n" + atualMunicao;
+    }
 }
