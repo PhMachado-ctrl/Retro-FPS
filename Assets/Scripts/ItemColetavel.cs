@@ -8,6 +8,7 @@ public class ItemColetavel : MonoBehaviour
     public bool municao;
     public bool chaveDourada;
     public bool chavePrata;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +19,32 @@ public class ItemColetavel : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            if(kitMedico = true)
+            {
+
+            }
+
+            if(municao == true)
+            {
+
+            }
+
+            if(chaveDourada == true)
+            {
+                
+            }
+
+            if(chavePrata == true)
+            {
+                
+            }
+
+        }
     }
 }
