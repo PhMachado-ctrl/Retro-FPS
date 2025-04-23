@@ -36,7 +36,7 @@ public class VidaDoJogador : MonoBehaviour
     }
 
     //METODO PUBLICO PARA GANHAR VIDA.
-    public void GanharVida(vidaRecebida)
+    public void GanharVida(int vidaRecebida)
     {
         //SE A SOMA DA VIDAATIAL EA VIDARECEVIDA FOR ENOR QUE O MAXIMO FAÇA.
         if(vidaAtual + vidaRecebida < vidaMaxima)
