@@ -9,6 +9,9 @@ public class ItemColetavel : MonoBehaviour
     public bool chaveDourada;
     public bool chavePrata;
 
+    public int vidaParaDar;
+    public int municaoParaDar;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +35,7 @@ public class ItemColetavel : MonoBehaviour
 
             if(municao == true)
             {
-
+                other.gameObject.GetComponent<AtaqueDoJogador>().GanharMunicao(municaoParaDar);
             }
 
             if(chaveDourada == true)
